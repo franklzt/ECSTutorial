@@ -21,13 +21,3 @@ public struct TextureIndexData : IComponentData
     public int index;
 }
 
-[BurstCompile]
-public struct TextureData : IComponentData
-{
-    public Texture[] textures;
-}
-
-public struct MatData : IComponentData
-{
-    public Material material;
-}

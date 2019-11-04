@@ -63,22 +63,22 @@ public class MoveSystem : JobComponentSystem
     }
 }
 
-public class ChangeMatTextureSystem : JobComponentSystem
-{
+//public class ChangeMatTextureSystem : JobComponentSystem
+//{
 
-    [BurstCompile]
-    public struct TextureJob : IJobForEach<MatData, TextureIndexData, TextureData>
-    {
-        public float DeltaTime;
+//    [BurstCompile]
+//    public struct TextureJob : IJobForEach<MatData, TextureIndexData, TextureData>
+//    {
+//        public float DeltaTime;
 
-        public void Execute(ref MatData mesh, ref TextureIndexData index, ref TextureData texture)
-        {
-            mesh.material.SetTexture("_MainTex", texture.textures[index.index]);
-        }
-    }
+//        public void Execute(ref MatData mesh, ref TextureIndexData index, ref TextureData texture)
+//        {
+//            mesh.material.SetTexture("_MainTex", texture.textures[index.index]);
+//        }
+//    }
 
-    protected override JobHandle OnUpdate(JobHandle inputDeps)
-    {
-        return new TextureJob() { DeltaTime = Time.deltaTime }.Schedule(this, inputDeps);
-    }
-}
+//    protected override JobHandle OnUpdate(JobHandle inputDeps)
+//    {
+//        return new TextureJob() { DeltaTime = Time.deltaTime }.Schedule(this, inputDeps);
+//    }
+//}
